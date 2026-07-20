@@ -42,7 +42,7 @@ function AppContent() {
   return (
     <div className="flex h-screen overflow-hidden bg-background">
       <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
-      <main className="flex-1 h-full overflow-y-auto">
+      <main className="flex-1 h-full overflow-y-auto pt-14 pb-16 md:pt-0 md:pb-0">
         {renderTab()}
       </main>
     </div>
