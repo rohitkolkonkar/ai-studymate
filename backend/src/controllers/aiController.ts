@@ -33,7 +33,7 @@ Keep responses concise and formatted with headers/bullets for readability on a s
     }));
 
     const response = await ai.models.generateContent({
-      model: "gemini-flash-latest",
+      model: "gemini-flash-lite-latest",
       contents: contents,
       config: {
         systemInstruction: systemInstruction,
@@ -56,7 +56,7 @@ export const summarizeNotes = async (req: Request, res: Response) => {
     }
 
     const response = await ai.models.generateContent({
-      model: "gemini-flash-latest",
+      model: "gemini-flash-lite-latest",
       contents: `Please summarize the following notes:\n\n${text}`,
       config: {
         systemInstruction: "You are a notes summarizer. Given text, provide a clean, concise, bulleted summary of the most important concepts."
@@ -79,7 +79,7 @@ export const generateQuiz = async (req: Request, res: Response) => {
     }
 
     const response = await ai.models.generateContent({
-      model: "gemini-flash-latest",
+      model: "gemini-flash-lite-latest",
       contents: `Generate a quiz on this topic:\n\n${topic}`,
       config: {
         systemInstruction: `You are a quiz generator. Generate a multiple-choice quiz based on the user's topic/notes. Generate 3 to 5 questions.`,
@@ -116,7 +116,7 @@ export const generateFlashcards = async (req: Request, res: Response) => {
     }
 
     const response = await ai.models.generateContent({
-      model: "gemini-flash-latest",
+      model: "gemini-flash-lite-latest",
       contents: `Generate flashcards on this topic:\n\n${topic}`,
       config: {
         systemInstruction: `You are a flashcard generator. Generate a set of flashcards based on the user's topic/notes. Generate 5 to 10 flashcards. Keep the text concise so it fits on a card.`,
