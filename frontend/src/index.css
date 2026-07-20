@@ -1,0 +1,29 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --color-background: #f8fafc;
+  --color-foreground: #0f172a;
+  --color-primary: #4f46e5;
+  --color-primary-hover: #4338ca;
+  --color-surface: #ffffff;
+  --color-border: #e2e8f0;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-4 py-2 bg-primary text-white rounded-lg hover:bg-[var(--color-primary-hover)] transition-colors shadow-sm;
+  }
+  .input-field {
+    @apply w-full p-3 border border-border rounded-lg bg-surface focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all;
+  }
+  .card {
+    @apply bg-surface rounded-xl border border-border shadow-sm p-6;
+  }
+}
