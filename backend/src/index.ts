@@ -35,6 +35,10 @@ app.get('*', (req: Request, res: Response) => {
   res.sendFile(path.join(frontendPath, 'index.html'));
 });
 
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
-});
+if (process.env.NODE_ENV !== 'production' || !process.env.VERCEL) {
+  app.listen(port, () => {
+    console.log(`Server running on port ${port}`);
+  });
+}
+
+export default app;
