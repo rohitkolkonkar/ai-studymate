@@ -1,7 +1,9 @@
 import axios from 'axios';
 
+const baseURL = import.meta.env.VITE_API_URL || (import.meta.env.PROD ? '/api' : 'http://localhost:3001/api');
+
 const api = axios.create({
-  baseURL: 'http://localhost:3001/api',
+  baseURL,
 });
 
 export const chatWithTutor = async (messages: {role: string, content: string}[]) => {
